@@ -7,7 +7,6 @@
 </head>
 <body>
 	<h3>Student Registration Form</h3>
-
 	<form action="">
 		<fieldset>
 			<legend>Admission Info</legend>
@@ -15,11 +14,31 @@
 		<input type="date" name="dob"><br>
 		<label for="">Gender: </label><br>
 		Male <input type="radio" name="gender" value="male"> Female <input type="radio" name="gender" value="female">
-		Others <input type="radio" name="gender" value="others">
+		Others <input type="radio" name="gender" value="others"><br>
 		Subjects: <br>
 		PHP <input type="checkbox" name="php" value="php"> 
 		MySQL <input type="checkbox" name="mysql" value="mysql">
-		Java <input type="checkbox" name="java" value="java">
+		Java <input type="checkbox" name="java" value="java"><br>
+		Location: <br>
+		<select name="location" multiple size="10">
+			<option value="" disabled selected>Select One</option>
+			<optgroup label="Mirpur">
+				<option value="1">Mirpur 10</option>
+				<option value="5">Mirpur 11</option>
+			</optgroup>
+			<optgroup label="Dhanmondi">
+				<option value="2">Shankar</option>
+				<option value="6">Zigatola</option>
+				<option value="7">Dhanmondi 15</option>
+			</optgroup>
+			<option value="3">Paltan</option>
+			<option value="4">Gulshan</option>
+		</select><br>
+		<input type="file" name="photo"><br>
+		Phone: <input type="text" name="phone">
+		<input type="image" src="button.jpg" value="Button">
+
+
 		</fieldset>
 		<fieldset>
 			<legend>Login info</legend>
@@ -28,6 +47,8 @@
 			<input type="password" name="repeat_password" placeholder="retype password">
 		</fieldset>
 		<input type="submit" name="submit" value="SUBMIT">
+		<input type="reset" name="reset" value="RESET">
+		
 	</form>
 	
 </body>
