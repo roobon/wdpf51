@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function sumFunc(){
+  			var x = prompt("Enter your 1st number", "");
+ 			var y = prompt("Enter your 2nd number", "");
+ 			x =  parseInt(x);
+ 			y =  parseInt(y);
+
+ 			var total =  x + y;
+ 		document.getElementById('display').innerHTML = total;
+ 			//alert("Yes, total number is " + total);
+		}
+	</script>
+<button onclick="sumFunc()">click here</button>
+
+<h1 id="display">Total will show here</h1>
+
+</body>
+</html>	
