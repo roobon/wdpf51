@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function sum(){
+			var f = document.myform.first.value;
+			var s = document.myform.second.value;
+			f = parseInt(f);
+			s = parseInt(s);
+			var total = f + s;
+			document.getElementById('result').innerHTML = total;
+		}
+	</script>
+	<form name="myform">
+		<input type="text" name="first"><br>
+		<input type="text" name="second"><br>
+		<input type="button" value="SUM" onclick="sum()">
+	</form>
+
+	<h1 id="result"></h1>
+	
+</body>
+</html>

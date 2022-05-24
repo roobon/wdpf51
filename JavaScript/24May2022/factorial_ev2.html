@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Calculate Factorial</h1>
+	<script>
+		function calc_factorial(n){
+			if(n==0){
+				return 1;
+			}
+			return n * calc_factorial(n-1);
+		}
+
+		document.write("<h1>" +   calc_factorial(prompt("Enter any number")) + "</h1>");
+		
+	</script>	
+	
+</body>
+</html>
