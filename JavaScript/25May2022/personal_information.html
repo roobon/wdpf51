@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function  profile_info(){
+			var fullname = document.info.fullname.value;
+			var gender = document.info.gender.value;
+			var district = document.info.district.value;
+			var profile = document.info.profile.value;
+			var output;
+
+			output = "<hr>Name: " + fullname + "<br>"; 
+			output += "Gender: " + gender + "<br>"; 
+			output += "District: " + district + "<br>"; 
+			output += "Profile: " + profile; 
+
+			document.getElementById("show").innerHTML = output;
+		}
+	</script>
+
+	<h2>Personal Information</h2>
+	<form name="info">
+		<input type="text" name="fullname" placeholder="Enter name"><br>
+		Gender: <br>
+		Male: <input type="radio" name="gender" value="male">
+		Female: <input type="radio" name="gender" value="female">
+		<br>
+		District: <br>
+		<select name="district">
+			<option value="" disabled selected>Select one</option>
+			<option value="Dhaka">Dhaka</option>
+			<option value="Khulna">Khulna</option>
+		</select>
+		<br>
+		Profile: <br>
+		<textarea name="profile"></textarea>
+		<br>
+		<input type="button" value="SEND" onclick="profile_info()">
+		<input type="button" value="RESET" onclick="reset()">
+	</form>
+
+<div id="show"></div>
+	
+</body>
+</html>

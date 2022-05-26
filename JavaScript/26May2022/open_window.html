@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="mywindow()">Open</button>
+	<script>
+		function mywindow(){
+			var x = window.open("", "", "width=600,height=400,left=200,top=200");
+			x.document.write("<h1>Hello</h1>");
+			x.document.write("<p>How are you?</p>");
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var img1="javascript.png"; 
+		var img2= "java.png";
+		
+		function interval() { 
+			window.setInterval("document.cup.src=img1",3000); 
+		} 
+		function timeOut() { 
+			window.setTimeout("document.cup.src=img2",5000); 
+			window.interval(); 
+		} 
+	</script>
+	<img src="noimage.jpg" alt="" name="cup"><br>
+	<button onclick="interval()">Interval</button>
+	<button onclick="timeOut()">Timeout</button>
+	
+</body>
+</html>
