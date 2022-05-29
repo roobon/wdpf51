@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function validate(){
+			var name = document.regform.name.value; 
+			var email = document.regform.email.value; 
+			if(name==""){
+				alert("You have to put a name");
+			} else if(email==""){
+				alert("You have to put an email");
+			}
+			else {
+				alert("All are submitted");
+			}
+		}
+	</script>
+	<h2>Registration Form</h2>
+	<form name="regform">
+		<input type="text" name="name" placeholder="Enter name"><br>
+		<input type="text" name="email" placeholder="Enter email"><br>
+		<input type="button" onclick="validate()" value="REGISTER">
+	</form>
+	
+</body>
+</html>
