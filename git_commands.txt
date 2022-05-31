@@ -3,3 +3,15 @@ Hello all,
 I am going to upload all class files here.
 
 I will write all necessary git commands here.
+
+###########################################################################
+############# To clone/copy a git resource do the below command ###########
+###########################################################################
+
+git clone https://github.com/roobon/wdpf51.git
+
+###########################################################################
+##################### Anytime you can check git status ####################
+###########################################################################
+
+git status
