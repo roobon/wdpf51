@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function radiocheck(){
+			var display = "Your answer is: \n";
+			//alert(hardware.length);
+			var items = document.getElementsByTagName('input');
+			for(var i=0; i<items.length; i++){
+				if(items[i].checked){
+					display += items[i].value + "\n";
+				}
+			}
+			document.hardware.answer.value = display;
+		}
+	</script>
+
+	<form name="hardware">
+		Components: <br>
+		Cost <input type="radio" name="component" value="Cost" ><br>
+		Reliability <input type="radio" name="component" value="Reliability"><br>
+
+		Hardware items: <br>
+		Printer <input type="checkbox" name="printer" class="item" value="Printer"><br>
+		Scanner <input type="checkbox" name="scanner" class="item" value="Scanner"><br>
+		<input type="button" onclick="radiocheck()" value="SEND Your Answer"><br>
+		Your answers is: <br>
+		<textarea name="answer" cols="30" rows="10"></textarea>
+	</form>
+	
+</body>
+</html>
