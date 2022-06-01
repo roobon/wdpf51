@@ -1,0 +1,24 @@
+ 
+ h1,h2,h3 {
+ 	text-align: left;
+ 	color: #FB3174;
+ }
+
+ .para {
+ 	font-size: 22px;
+ 	color: #F31717;
+ 	background-color: #E9C9FB;
+ }
+
+ article.main {
+ 	background-color: #47F9A7;
+ 	border: 2px solid black;
+ }
+
+ .center {
+ 	text-align: center;
+ }
+
+ .large {
+ 	font-size: 40px;
+ }
