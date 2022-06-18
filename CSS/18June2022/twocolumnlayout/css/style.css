@@ -1,0 +1,114 @@
+@import url('css/style1.css');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 18px;
+	font-family: Tahoma;
+	line-height: 30px;
+	letter-spacing: 2px;
+	background-color: #DAD7D7;
+}
+
+.banner {
+	text-align: center;
+	background-color: #FFC343;
+	padding: 40px;
+}
+
+
+
+/* Horizontal Menu Starts */
+.menu {
+	background-color: #000;
+
+}
+.menu ul {
+	margin-left: 50px; 
+	margin-right: 50px; 
+}
+
+.menu ul li{
+	display: inline-block;
+	
+}
+.menu a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 20px;	
+
+}
+.menu a:hover {
+	color: #000;
+	background-color: #fff;
+}
+
+/* Horizontal Menu End */
+
+/* Vertical Menu Start */
+.vmenu ul li{
+	display: block;	
+}
+.vmenu a {
+	text-decoration: none;
+	display: block;
+	padding: 20px;	
+}
+.vmenu a:hover {
+	color: #fff;
+	background-color: #000;
+}
+/* Vertical Menu End */
+
+.left {
+	width: 74%;
+	float: left;
+	margin-right: 0.5%;
+	margin-left: 0.5%;
+
+}
+.right {
+	width: 24.5%;
+	float: left;
+	margin-right: 0.5%;
+}
+
+.card {
+	margin-top: 10px;
+	padding: 20px;
+	background-color: #fff;
+}
+
+.cardImage img {
+	margin: 5px 0;
+	width: 100%;
+	height: auto;
+}
+
+.footer {
+	clear: both;
+	padding: 20px;
+	background-color: #B11616;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+}
+
+.logo img {
+	width: 160px;
+	height: auto;
+	float: left;
+}
+
+.menu input[type="text"] {
+	margin-top: 10px;
+	width: 400px;
+	padding: 15px;
+}
+
+
+
