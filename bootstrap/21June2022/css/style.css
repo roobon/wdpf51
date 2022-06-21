@@ -1,0 +1,35 @@
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+.jumbotron {
+	border-radius: 0 !important;
+}
+.footer {
+	border-radius: 0;
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 100%;
+  }
+.wdpf-content {
+	height: 420px;
+	line-height: 20px;
+	letter-spacing: 2px;
+	text-align: justify;
+} 
+
+/* Custom style for changing separator  */
+   .breadcrumb>li+li:before {
+   		content: ">";
+   	}
+
+   	.breadcrumb {
+   		background-color:#F9E0E0;
+   		border-radius: 0;
+   	}
