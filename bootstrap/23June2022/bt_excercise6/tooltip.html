@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<br><br>
+
+		<a href="" id="abc" title="Some infomation for the page of about us">About us</a>
+
+	<button class="btn btn-success">Click here</button>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+		jQuery(document).ready(function($) {
+			jQuery('.btn-success').tooltip({title:"My message", placement:"bottom"});
+			jQuery('#abc').tooltip({title:"My message", placement:"bottom"});
+		});
+	</script>
+
+</body>
+</html>
