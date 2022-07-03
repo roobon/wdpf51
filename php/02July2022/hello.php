@@ -17,7 +17,8 @@ print "<h1>Hello World</h1>";
 
 ?>
 
-<? echo "This is short open tag example";   //short open tag ?>
+<? echo "This is short open tag example";   
+//short open tag ?>
     
 </body>
 </html>
