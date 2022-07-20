@@ -14,5 +14,5 @@
     //echo, print, printf, sprintf
 
     //Tesing function var_dump(), print_r()
-// Constant creation: define();
+    // Constant creation: define();
 ?>
