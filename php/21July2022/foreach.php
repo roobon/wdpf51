@@ -2,11 +2,22 @@
     // Numeric indexed array
     $subjects = array("PHP", "Java", "Oracle", "Python", "C#");
 
-    foreach($subjects as $sub){
-        echo "$sub is my subject <br>";
+    foreach($subjects as $x){
+        echo "$x is my subject <br>";
     }
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
 <hr>
 <?php 
 
