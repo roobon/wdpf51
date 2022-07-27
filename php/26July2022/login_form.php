@@ -5,30 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error {
+            border: 1px solid blue;
+            padding:25px;
+            font-size:16px;
+            background-color: red;
+            width:200px;
+        }
+        .success {
+            width:200px;
+            padding:25px;
+            font-size:16px;
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
     <?php 
+    if($_SERVER['REQUEST_METHOD']=='POST'){
         $login =  $_POST['login'];
         $email =   $_POST['email'];
 
+        $errors = array();
+
+        if($login==''){
+            $errors[] = "Login must be filled up";
+        }
+        if($email==''){
+            $errors[] = "Email must be filled up";
+        }
         if(strlen($login)>8 || strlen($login)<4){
-            echo "Invalid login name";
+            $errors[] = "Login must be 4 to 8";
+        } 
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $errors[] = "Valid email must";
+        } 
+        // echo "<pre>";
+        // print_r($errors);
+        if(count($errors)>0){
+            echo "<ul class='error'>";
+            foreach($errors as $err){
+                echo "<li>$err </li>";
+            }
+            echo "</ul>";
         } else {
-            echo "Valid login name";
+            echo "<div class=\"success\">Login Successfull</div>";
         }
-
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            echo "Valid email Adderss";
-        } else {
-            echo "InValid email Adderss";
-        }
-
-        
+    }           
     ?>
     <h2>Login Form</h2>
     <form action="" method="post">
-        <input type="text" name="login" placeholder="Enter Login name"><br>
-        <input type="text" name="email" placeholder="Enter Email"><br>
+        <input type="text" name="login" value="<?php if(isset($login)) echo $login; ?>" placeholder="Enter Login name"><br>
+        <input type="text" name="email" value="<?php if(isset($email)) echo $email; ?>" placeholder="Enter Email"><br>
         <input type="submit" name="submit" value="LOGIN">
     </form>
     
