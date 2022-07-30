@@ -14,10 +14,10 @@ class student {
         foreach($this->lines as $line){
             list($id, $name, $batch, $result) = explode(",", $line);
             if($id==$sid ){
-                $output = "<h3>ID: $id</h3>";
+                $output = "<div class=\"show\">ID: $id<br>";
                 $output .= "<h1>Name: $name</h1>";
                 $output .= "Batch: $batch<br>";
-                $output .= "Result: $result";
+                $output .= "Result: $result</div>";
             } 
         }
         return $output;
