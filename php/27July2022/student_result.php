@@ -1,20 +1,21 @@
 <?php 
 class student {
-    public $id;
-    public $name;
-    public $batch;
+    // public $id;
+    // public $name;
+    // public $batch;
     public $lines;
 
     public function __construct(){
-        $lines = file('results.txt');
-        $this->lines = $lines;
+        $para = file('results.txt');
+        $this->lines = $para;
     }
 
     public function result($sid){       
         foreach($this->lines as $line){
+            echo $line . "<br>";
             list($id, $name, $batch, $result) = explode(",", $line);
             if($id==$sid ){
-                $output = "<div class=\"show\">ID: $id<br>";
+                $output = "<div>ID: $id<br>";
                 $output .= "<h1>Name: $name</h1>";
                 $output .= "Batch: $batch<br>";
                 $output .= "Result: $result</div>";
