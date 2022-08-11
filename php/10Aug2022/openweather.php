@@ -1,5 +1,5 @@
 <?php
-$OpenWeather = ['api_key' => '750a263c9706291d08118fbe504bc86d'];
+$OpenWeather = ['api_key' => ''];
 $zip = "98109";
 $lat = 23.7700761;
 $lon = 90.442869;
