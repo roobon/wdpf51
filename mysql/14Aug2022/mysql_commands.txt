@@ -19,3 +19,6 @@ SELECT employeeNumber, lastName, firstName FROM employees order by lastName desc
 ### condition with where clause ######
 SELECT employeeNumber, lastName, firstName, officeCode FROM employees WHERE officeCode = 4
 SELECT employeeNumber, lastName, firstName, email FROM employees WHERE officeCode = 1 AND jobTitle = 'Sales Rep'; 
+
+## Distinct value ##
+SELECT DISTINCT country  FROM customers ORDER BY country;
