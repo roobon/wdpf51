@@ -50,7 +50,12 @@
             }
             echo "</ul>";
         } else {
+            session_start();
+            $_SESSION['login'] = $login;
+            $_SESSION['email'] = $email;
+
             echo "<div class=\"success\">Login Successfull</div>";
+            echo "<a href=\"home.php\">Home page</a>";
         }
     }           
     ?>
