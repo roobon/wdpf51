@@ -29,9 +29,9 @@
                     echo "<td>$data->student_phone</td>"; ?>
                     <td align="center">
                         <!-- Delete Button -->
-                        <a href="student_delete.php?id=<?php echo $data->student_id ?>" onclick= "return confirm('Are you sure')"><img src="bin.png" width="30" alt=""></a>
+                        <a href="student_delete.php?id=<?php echo $data->id ?>" onclick= "return confirm('Are you sure')"><img src="bin.png" width="30" alt=""></a>
                         <!-- Edit Button -->
-                        <a href="student_edit.php?id=<?php echo $data->student_id ?>"><img src="pencil.png" width="20" alt=""></a>
+                        <a href="student_edit.php?id=<?php echo $data->id ?>"><img src="pencil.png" width="20" alt=""></a>
                     </td>
            <?php
                     echo "</tr>";          

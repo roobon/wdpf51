@@ -9,30 +9,30 @@
 </head>
 <body>
     <?php 
-echo $id = $_REQUEST['id'];
-
-$sql = "SELECT * FROM students WHERE student_id = '$id'";
-$result = $db->query($sql);
-$data = $result->fetch_assoc();
-
+$id = $_REQUEST['id'];
 
     if(isset($_POST['submit'])){
         extract($_POST);
-        $sql = "UPDATE students SET student_id = '$id', student_name = '$name', student_email = '$email', student_phone='$phone' WHERE student_id = '$id'";
+        $sql = "UPDATE students SET student_id = '$stid', student_name = '$name', student_email = '$email', student_phone='$phone' WHERE id = '$id'";
         $db->query($sql);
         if($db->affected_rows>0){
             echo "Successfully Updated";
        }
     }
+    $sql = "SELECT * FROM students WHERE id = '$id'";
+    $result = $db->query($sql);
+    $data = $result->fetch_assoc();
+
   
     ?>
     <h1>Student Entry System</h1>
     <form action="" method="post">
-        <input type="number" name="id" value="<?php echo $id; ?>"placeholder="Enter Unique ID"><br>
+        <input type="number" name="stid" value="<?php echo $data['student_id']; ?>"placeholder="Enter Unique ID"><br>
         <input type="text" name="name" value="<?php echo $data['student_name']; ?>" placeholder="Enter name"><br>
         <input type="email" name="email" value="<?php echo $data['student_email']; ?>" placeholder="Enter unique email"><br>
         <input type="text" name="phone" value="<?php echo $data['student_phone']; ?>" placeholder="Enter phone number"><br>
         <input type="submit" name="submit" value="UPDATE">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
     </form>
     <br>
     <a href="student_list.php">Student List</a>
