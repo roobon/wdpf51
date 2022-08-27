@@ -1,0 +1,12 @@
+// User Create
+mysql> create user 'dipu'@'localhost' identified by 'abcd';
+// Drop User
+drop user 'jason'@'localhost';
+// Rename Users
+RENAME USER 'amzad'@'localhost' TO 'amzzad'@'localhost';
+// Grant SELECT permission
+ grant select on wdpf51.* to 'dipu'@'localhost';
+// Grant UPDATE, DELETE permission
+  grant update,delete on wdpf51.* to 'dipu'@'localhost';
+// Revoke
+  revoke insert on wdpf51.* FROM 'dipu'@'localhost';

@@ -22,19 +22,19 @@
                     <th>Action</th>
                 </tr>" ;
        while($data = $result->fetch_object()){ 
-            echo "<tr>";
-                    echo "<td>$data->student_id</td>";
-                    echo "<td>$data->student_name</td>";
-                    echo "<td>$data->student_email</td>";
-                    echo "<td>$data->student_phone</td>"; ?>
-                    <td align="center">
-                        <!-- Delete Button -->
-                        <a href="student_delete.php?id=<?php echo $data->id ?>" onclick= "return confirm('Are you sure')"><img src="bin.png" width="30" alt=""></a>
-                        <!-- Edit Button -->
-                        <a href="student_edit.php?id=<?php echo $data->id ?>"><img src="pencil.png" width="20" alt=""></a>
-                    </td>
-           <?php
-                    echo "</tr>";          
+        //     echo "<tr>";
+        //             echo "<td>$data->student_id</td>";
+        //             echo "<td>$data->student_name</td>";
+        //             echo "<td>$data->student_email</td>";
+        //             echo "<td>$data->student_phone</td>"; ?>
+        //             <td align="center">
+        //                 <!-- Delete Button -->
+        //                 <a href="student_delete.php?id=<?php echo $data->id ?>" onclick= "return confirm('Are you sure')"><img src="bin.png" width="30" alt=""></a>
+        //                 <!-- Edit Button -->
+        //                 <a href="student_edit.php?id=<?php echo $data->id ?>"><img src="pencil.png" width="20" alt=""></a>
+        //             </td>
+        //    <?php
+        //             echo "</tr>";          
         }
         echo "</table>";
     ?>
