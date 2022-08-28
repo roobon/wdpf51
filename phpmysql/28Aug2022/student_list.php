@@ -10,8 +10,10 @@
 <body>
     <h1>Student list</h1>
     <?php 
-        $sql = "SELECT * FROM students";
+        //$sql = "SELECT * FROM students";
+        $sql = "CALL GetStudents()";
         $result = $db->query($sql);
+        //print_r($result);
        echo "<h2>Total record found $result->num_rows</h2>" ;
        echo "<table border='1'>
                 <tr>
