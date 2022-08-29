@@ -4,14 +4,14 @@
 $salary = '$5000';
 
 /* Change database details according to your database */
-$dbConnection = mysqli_connect('localhost', 'root', 'mysql', 'wdpf51_transaction');
+$dbConnection = mysqli_connect('localhost', 'root', '', 'wdpf51_transaction');
 
 mysqli_autocommit($dbConnection, false);
 
 $flag = true;
 
-$query1 = "INSERT INTO `employee` (`id`, `first_name`, `last_name`, `job_title`, `salary`) VALUES (9, 'Grace', 'Williams', 'Softwaree Engineer', '$salary')";
-$query2 = "INSERT INTO `telephone` (`id`, `employee_id`, `type`, `no`) VALUES (13, 9, 'mobile', '270-598712')";
+$query1 = "INSERT INTO `employee` (`id`, `first_name`, `last_name`, `job_title`, `salary`) VALUES (12, 'Dipu', 'Williams', 'ddkd', 'Softwaree Engineer', '$salary')";
+$query2 = "INSERT INTO `telephone` (`id`, `employee_id`, `type`, `no`) VALUES (16, 12, 'mobile', '270-598712')";
 
 $result = mysqli_query($dbConnection, $query1);
 
