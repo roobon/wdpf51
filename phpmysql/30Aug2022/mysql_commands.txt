@@ -1,0 +1,66 @@
+mysqldump -u root -p wdpf51.students > F:\wdpf51_st_dump.sql
+
+mysql -u root -p wdpf51_blank < F:\wdpf51_dump.sql
+
+SELECT * INTO OUTFILE "F:/student_info_1.txt"
+ FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n'
+ FROM wdpf51.student_info;
+
+SELECT * INTO OUTFILE "F:/student_info.xls"
+ FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n'
+ FROM wdpf51.student_info;
+
+LOAD DATA INFILE "F:/datafile.txt"
+INTO TABLE sales (id, client_id, order_time, sub_total, shipping_cost, total_cost);
+
+
+LOAD DATA INFILE 'F:datafile.txt' INTO TABLE sales (id, client_id, order_time, total_cost)
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+
+
+
+
+
+
+
+FILES
+
+	- products.php
+	- manufacturers.php 
+
+DELETE FROM product WHERE manufacturer_id = OLD.id
+
+
+
+SELECT productName,productDescription FROM products WHERE MATCH(productDescription) AGAINST 
+('Wheels');
+
+SELECT productName,productDescription FROM products WHERE productDescription LIKE '%Wheels%' 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
