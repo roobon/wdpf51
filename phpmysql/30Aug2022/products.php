@@ -24,3 +24,5 @@
     ?>
     
 </table>
+<br>
+<a href="manufacturers.php">Show Manufacturers</a>
