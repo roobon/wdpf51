@@ -1,0 +1,24 @@
+SELECT product.id, product.name, product.price, manufacturer.name FROM product, manufacturer WHERE manufacturer.id = product.manufacturer_id
+
+CREATE VIEW product_list_view AS
+SELECT p.id, p.name, p.price, m.name 
+FROM product p, manufacturer m 
+WHERE manufacturer.id = product.manufacturer_id
+
+INSERT INTO manufacturer VALUES (NULL, m_name, m_address, m_contact)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
