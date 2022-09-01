@@ -134,9 +134,9 @@ type: "POST", url: "check.php", data: 'invoice_no='+invoice_no , success: functi
 				<tr><td ><input name="amount" type="text" style="width:170px" placeholder="Amount" required="required" id="amount"/></td></tr>
 				<tr><td ><?php
 				echo"<select  class=\"input-small\" name=\"payType\" style=\"width:170px\" id=\"payment_type\">";
-						 $getpayType=mysql_query("SELECT Name FROM paymentTypes");
+						 $getpayType=mysqli_query($con, "SELECT Name FROM paymentTypes");
 						 echo"<option>Select Payment</option>";
-		 while($pType=mysql_fetch_array($getpayType))
+		 while($pType=mysqli_fetch_array($getpayType))
 			{
 				echo"<option>".$pType['Name']."</option>";
 			}

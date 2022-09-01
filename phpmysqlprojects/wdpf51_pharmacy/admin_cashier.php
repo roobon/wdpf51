@@ -142,8 +142,8 @@ return false;
 
         // get results from database
 
-        $result = mysql_query("SELECT * FROM cashier")
-                or die(mysql_error());
+        $result = mysqli_query($con, "SELECT * FROM cashier")
+                or die(mysqli_error());
 
 
         // display data in table
@@ -152,7 +152,7 @@ return false;
         echo "<tr> <th>ID</th><th>Firstname </th> <th>Lastname </th> <th>Username </th><th>Update </th><th>Delete</th></tr>";
 
         // loop through results of database query, displaying them in the table
-        while($row = mysql_fetch_array( $result )) {
+        while($row = mysqli_fetch_array( $result )) {
 
                 // echo out the contents of each row into a table
                 echo "<tr>";

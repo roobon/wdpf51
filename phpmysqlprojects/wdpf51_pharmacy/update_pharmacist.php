@@ -17,17 +17,19 @@ $phone=$_POST['phone'];
 $email=$_POST['email'];
 $username=$_POST['username'];
 $pas=$_POST['password'];
-
+$ph_id = $_POST['ph_id'];
 // get value of id that sent from address bar
-$user=$_POST['user'];
+//$user=$_POST['user'];
 
 // Retrieve data from database
-$sql="UPDATE pharmacist SET first_name='$fname', last_name='$lname', staff_id='$sid',
-postal_address='$postal',phone='$phone',email='$email',username='$username', password='$pas' WHERE username='$username'";
-if($sql>0) {header("location:http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/admin.php");
+$sql="UPDATE pharmacist SET first_name='$fname', last_name='$lname', staff_id='$sid', postal_address='$postal', phone='$phone', email='$email',username='$username', password='$pas' WHERE pharmacist_id ='$ph_id'";
+mysqli_query($con, $sql);
+//echo mysqli_affected_rows($con);
+if(mysqli_affected_rows($con)>0) {header("location:http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/admin.php");
 }else{
 $message1="<font color=red>Update Failed, Try again</font>";
-}}
+}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,18 +69,25 @@ $message1="<font color=red>Update Failed, Try again</font>";
 
         <div id="content_1" class="content">
 		<?php echo $message1;?>
-          <form name="myform" onsubmit="return validateForm(this);" action="update_cashier.php" method="post" >
+		<?php 
+		$ph_id = $_GET['ph_id'];
+		$sql = "SELECT * FROM pharmacist WHERE pharmacist_id='$ph_id'"; 
+		$result = mysqli_query($con, $sql);
+		$row = mysqli_fetch_assoc($result);
+		?>
+          <form name="myform" onsubmit="return validateForm(this);" action="" method="post" >
 			<table width="420" height="106" border="0" >
-				<tr><td align="center"><input name="first_name" type="text" style="width:170px" placeholder="First Name" value="<?php include_once('connect_db.php'); echo $_GET['first_name']?>" id="first_name" /></td></tr>
-				<tr><td align="center"><input name="last_name" type="text" style="width:170px" placeholder="Last Name" id="last_name" value="<?php include_once('connect_db.php'); echo $_GET['last_name']?>" /></td></tr>
-				<tr><td align="center"><input name="staff_id" type="text" style="width:170px" placeholder="Staff ID" id="staff_id" value="<?php include_once('connect_db.php'); echo $_GET['staff_id']?>" /></td></tr>
-				<tr><td align="center"><input name="postal_address" type="text" style="width:170px" placeholder="Address" id="postal_address" value="<?php include_once('connect_db.php'); echo $_GET['postal_address']?>" /></td></tr>
-				<tr><td align="center"><input name="phone" type="text" style="width:170px" placeholder="Phone" id="phone" value="<?php include_once('connect_db.php'); echo $_GET['phone']?>" /></td></tr>
-				<tr><td align="center"><input name="email" type="email" style="width:170px" placeholder="Email" id="email"value="<?php include_once('connect_db.php'); echo $_GET['email']?>" /></td></tr>
-				<tr><td align="center"><input name="username" type="text" style="width:170px" placeholder="Username" id="username"value="<?php include_once('connect_db.php'); echo $_GET['username']?>" /></td></tr>
-				<tr><td align="center"><input name="password" placeholder="Password" id="password"value="<?php include_once('connect_db.php'); echo $_GET['password']?>"type="password" style="width:170px"/></td></tr>
+				<tr><td align="center"><input name="first_name" type="text" style="width:170px" placeholder="First Name" value="<?php  echo $row['first_name']?>" id="first_name" /></td></tr>
+				<tr><td align="center"><input name="last_name" type="text" style="width:170px" placeholder="Last Name" id="last_name" value="<?php  echo $row['last_name']?>" /></td></tr>
+				<tr><td align="center"><input name="staff_id" type="text" style="width:170px" placeholder="Staff ID" id="staff_id" value="<?php  echo $row['staff_id']?>" /></td></tr>
+				<tr><td align="center"><input name="postal_address" type="text" style="width:170px" placeholder="Address" id="postal_address" value="<?php echo $row['postal_address']?>" /></td></tr>
+				<tr><td align="center"><input name="phone" type="text" style="width:170px" placeholder="Phone" id="phone" value="<?php echo $row['phone']?>" /></td></tr>
+				<tr><td align="center"><input name="email" type="email" style="width:170px" placeholder="Email" id="email"value="<?php echo $row['email']?>" /></td></tr>
+				<tr><td align="center"><input name="username" type="text" style="width:170px" placeholder="Username" id="username"value="<?php echo $row['username']?>" /></td></tr>
+				<tr><td align="center"><input name="password" placeholder="Password" id="password"value="<?php echo $row['password']?>"type="password" style="width:170px"/></td></tr>
 				<tr><td align="center"><input name="submit" type="submit" value="Update"/></td></tr>
             </table>
+			<input type="hidden" name="ph_id" value="<?php echo $ph_id;?>">
 		</form>
 		</div>
     </div>

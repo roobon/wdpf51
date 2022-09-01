@@ -25,12 +25,12 @@ if(isset($_POST['drug_name']))
 	$strength=$_POST['strength'];
 	$dose=$_POST['dose'];
 	$quantity=$_POST['quantity'];
-	$sql=mysql_query("INSERT INTO tempPrescri(customer_id,customer_name,age,sex,postal_address,phone,drug_name,strength,dose,quantity)
+	$sql=mysqli_query($con, "INSERT INTO tempPrescri(customer_id,customer_name,age,sex,postal_address,phone,drug_name,strength,dose,quantity)
 						VALUES('{$_SESSION['custId']}','{$_SESSION['custName']}','{$_SESSION['age']}','{$_SESSION['sex']}','{$_SESSION['address']}','{$_SESSION['phone']}','{$drug}','{$strength}','{$dose}','{$quantity}')");
 						
 						$_SESSION['quantity']=$quantity;
-	$get_cost=mysql_query("SELECT cost FROM stock WHERE drug_name='{$drug}'");
-	$cost=mysql_fetch_array($get_cost);
+	$get_cost=mysqli_query($con, "SELECT cost FROM stock WHERE drug_name='{$drug}'");
+	$cost=mysqli_fetch_array($get_cost);
 	$tot=$quantity*$cost[0];
 	
 	$file=fopen("receipts/docs/".$_SESSION['custId'].".txt", "a+");
@@ -43,8 +43,8 @@ if(isset($_POST['drug_name']))
 		<th>Dose</th>
 		<th>Quantity </th></tr>";
         // loop through results of database query, displaying them in the table
-		 $result = mysql_query("SELECT * FROM tempPrescri")or die(mysql_error());
-        while($row = mysql_fetch_array($result)) 
+		 $result = mysqli_query($con, "SELECT * FROM tempPrescri")or die(mysqli_error($con));
+        while($row = mysqli_fetch_array($result)) 
 		{
                 // echo out the contents of each row into a table
                 echo "<tr>";
@@ -70,8 +70,8 @@ $invoice=$_POST['invoice_no'];
 	$_SESSION['amount']=$amount;
 	$_SESSION['paymentType']=$payment;
 	$_SESSION['serialNo']=$serial;
-$getDetails=mysql_query("SELECT invoice,drug,cost,quantity FROM invoice_details WHERE invoice='{$invoice}'");
-$getQuantity=mysql_query("SELECT quantity FROM invoice_details WHERE invoice_id='{$invoice}'");
+$getDetails=mysqli_query($con, "SELECT invoice,drug,cost,quantity FROM invoice_details WHERE invoice='{$invoice}'");
+$getQuantity=mysqli_query($con, "SELECT quantity FROM invoice_details WHERE invoice_id='{$invoice}'");
 $file=fopen("receipts/docs/".$_SESSION['invoiceNo'].".txt", "w");
 	
 	
@@ -82,12 +82,12 @@ $file=fopen("receipts/docs/".$_SESSION['invoiceNo'].".txt", "w");
 		<th>Unit cost</th>
 		<th>Quantity </th>
 		<th>Total Cost(Ksh.)</th></tr>";
-while($item5=mysql_fetch_array($getDetails))
+while($item5=mysqli_fetch_array($getDetails))
 			{
-			$getDrug=mysql_query("SELECT drug_name FROM stock WHERE stock_id='{$item5['drug']}'");
+			$getDrug=mysqli_query($con, "SELECT drug_name FROM stock WHERE stock_id='{$item5['drug']}'");
 						
-			$drug=mysql_fetch_array($getDrug);
-			$qtty=mysql_fetch_array($getQuantity);
+			$drug=mysqli_fetch_array($getDrug);
+			$qtty=mysqli_fetch_array($getQuantity);
 			$tot=$item5['cost']*$item5['quantity'];
 			$total[]=$tot;
 			fwrite($file, $drug[0].";".$item5['cost'].";".$item5['quantity'].";".$tot.";\n");	

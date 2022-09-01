@@ -137,7 +137,7 @@ return false;
 
         // get results from database
 
-        $result = mysql_query("SELECT * FROM manager")
+        $result = mysqli_query($con, "SELECT * FROM manager")
                 or die(mysql_error());
 
 
@@ -147,7 +147,7 @@ return false;
         echo "<tr> <th>ID</th><th>Firstname </th> <th>Lastname </th> <th>Username </th><th>Update </th><th>Delete</th></tr>";
 
         // loop through results of database query, displaying them in the table
-        while($row = mysql_fetch_array( $result )) {
+        while($row = mysqli_fetch_array( $result )) {
 
                 // echo out the contents of each row into a table
                 echo "<tr>";
