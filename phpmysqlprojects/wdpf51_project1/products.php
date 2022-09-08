@@ -64,6 +64,7 @@
         <div class="card">
             <div class="card-header">
               <h3 class="card-title">All Products</h3>
+              <div class="text-right"><a href="product_entry.php" class="btn btn-primary">New Product</a></div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -75,6 +76,7 @@
                   <th>Details</th>
                   <th>Price</th>
                   <th>Thumbnanil</th>
+                  <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -90,6 +92,9 @@
                   <td><?php echo $row['pdetails']; ?></td>
                   <td><?php echo $row['pprice']; ?></td>
                   <td><?php echo $row['pthumb']; ?></td>
+                  <td> 
+                  <a href="product_edit.php?id=<?php echo $row['pid']; ?>"><i class="fa fa-edit"></i></a> | 
+                  <a onclick="return confirm('Are you sure want to delete?')" href="product_delete.php?id=<?php echo $row['pid']; ?>"><i class="fa fa-trash"></i></a>  </td>
                 </tr>
                 <?php } ?>
                 </tbody>
