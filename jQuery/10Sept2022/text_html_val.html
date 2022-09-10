@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        var x = $("h1").text();
+        $("h2").text("Content from h1: " + x);
+    })
+    $("#btn2").click(function(){
+        var y = $("#para1").text();
+        $("#content1").text(y);
+    })
+});
+</script>
+</head>
+<body>
+    <button id="btn1">Do it</button>
+    <h1>My Heading</h1>
+    <h2></h2>
+    <button id="btn2">Copy and Paste</button>
+    <p id="para1"><b>Lorem ipsum</b> dolor sit amet consectetur adipisicing elit.<i>Voluptatum</i>architecto expedita amet maxime aliquid illo impedit, totam repudiandae quibusdam reprehenderit dicta veritatis sunt similique at enim laudantium. Nisi, officiis dolorem!</p>
+
+    <div id="content1" style="background-color:aqua"></div>
+</body>
+</html>

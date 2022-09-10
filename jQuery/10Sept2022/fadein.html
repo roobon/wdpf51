@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $(".box1").fadeIn(3000);
+  $(".box1").hover(function(){
+    $(this).fadeOut(3000);
+  });
+});
+</script>
+<style>
+    .box1{width:200px; height:200px; background-color:red; display:none;}
+</style>
+</head>
+<body>
+    <div class="box1"></div>
+    
+   
+</body>
+</html>
