@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>the title</title>
+<script type="text/javascript"
+src="../jquery.min.js"></script>
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+    $(".myclass").click(function() {
+        var content = $(this).text();
+        $("h1").text(content);
+    })
+});
+</script>
+
+</head>
+<body>
+    <h1></h1>
+   
+    <div class="myclass">Exam is over. We are now free from strech</div>
+
+    </body>
+    </html>
